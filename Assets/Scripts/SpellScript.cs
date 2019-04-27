@@ -9,9 +9,9 @@ public class SpellScript : MonoBehaviour
     public bool isFire;
     public bool isAir;
 
-    public float cooldown = 0;
-    public float baseDamage = 0;
-    public float knockback = 0;
+    public float cooldown = 0f;
+    public float baseDamage = 0f;
+    public float knockback = 0f;
     
     void Start()
     {

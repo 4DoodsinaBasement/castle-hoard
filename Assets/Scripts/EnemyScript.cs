@@ -10,15 +10,15 @@ public class EnemyScript : MonoBehaviour
     
     public float moveSpeed = 1;
     public int maxHP = 10;
-    public int currentHP = maxHP;
+    int currentHP;
     // TODO: make array for enemy skills
 
-    public float fireEffectiveness = 1.0;
-    public float earthEffectiveness = 1.0;
-    public float waterEffectiveness = 1.0;
-    public float airEffectiveness = 1.0;
+    public float fireEffectiveness = 1.0f;
+    public float earthEffectiveness = 1.0f;
+    public float waterEffectiveness = 1.0f;
+    public float airEffectiveness = 1.0f;
 
-    public float knockbackEffectiveness = 1.0;
+    public float knockbackEffectiveness = 1.0f;
 
     
     void Start()
@@ -26,6 +26,8 @@ public class EnemyScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         moveTarget = new Vector3(0,0);
         direction = new Vector3(0,0);
+
+        currentHP = maxHP;
     }
 
     void Update()
