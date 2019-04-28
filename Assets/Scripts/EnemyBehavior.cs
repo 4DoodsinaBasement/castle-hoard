@@ -6,13 +6,15 @@ public class EnemyBehavior : MonoBehaviour
 {
     Rigidbody2D rb;
     Vector3 moveTarget;
-    Vector3 direction;
+    Vector3 moveDirection;
     
+    [Header("Movement & HP")]
     public float moveSpeed = 1;
     public int maxHP = 10;
-    int currentHP;
+    public int currentHP;
     // TODO: make array for enemy skills
 
+    [Header("Elemental Resistences")]
     public float fireEffectiveness = 1.0f;
     public float earthEffectiveness = 1.0f;
     public float waterEffectiveness = 1.0f;
@@ -25,17 +27,22 @@ public class EnemyBehavior : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         moveTarget = new Vector3(0,0);
-        direction = new Vector3(0,0);
+        moveDirection = new Vector3(0,0);
 
         currentHP = maxHP;
     }
 
     void Update()
     {
-        direction = moveTarget - transform.position;
-        rb.velocity = direction.normalized * moveSpeed;
+        moveDirection = moveTarget - transform.position;
+        rb.velocity = moveDirection.normalized * moveSpeed;
+
+        if (currentHP <= 0) { Destroy(this.gameObject); }
     }
 
 
-
+    public void IncomingEffect(EffectObject incommingEffect)
+    {
+        currentHP -= (int)incommingEffect.damage;
+    }
 }

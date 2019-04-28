@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PointerController : MonoBehaviour
 {
-    public Vector3 direction;
+    public GameObject spellBinding;
+    Vector3 direction;
     float angle;
     
     // Start is called before the first frame update
@@ -20,7 +21,10 @@ public class PointerController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            
+            Vector3 spellLocation = new Vector3(0,0,0);
+            spellLocation = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            spellLocation.z = 0;
+            Instantiate(spellBinding, spellLocation, Quaternion.identity);
         }
     }
 
