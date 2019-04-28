@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyScript : MonoBehaviour
+public class EnemyBehavior : MonoBehaviour
 {
     Rigidbody2D rb;
     Vector3 moveTarget;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpellScript : MonoBehaviour
+public class SpellBehavior : MonoBehaviour
 {
     public bool isWater;
     public bool isEarth;
