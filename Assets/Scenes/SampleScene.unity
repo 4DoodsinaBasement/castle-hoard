@@ -280,7 +280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyObject: {fileID: 5581177468717624273, guid: fbd6de54fd90a664a9d9e9f0fd501f85,
     type: 3}
-  numberEnemies: 0
+  numberEnemies: 1000
   radius: 15
 --- !u!4 &859480305
 Transform:
