@@ -280,7 +280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyObject: {fileID: 5581177468717624273, guid: fbd6de54fd90a664a9d9e9f0fd501f85,
     type: 3}
-  numberEnemies: 1000
+  numberEnemies: 0
   radius: 15
 --- !u!4 &859480305
 Transform:
@@ -341,7 +341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyObject: {fileID: 5581177468717624273, guid: 277a886dcbd473e43bee3a4f6b1d6bac,
     type: 3}
-  numberEnemies: 1
+  numberEnemies: 10
   radius: 15
 --- !u!1 &1226779553
 GameObject:
