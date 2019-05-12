@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9198556619757946607}
   - component: {fileID: 4792702146904040597}
   - component: {fileID: 9216913740253313440}
-  - component: {fileID: 4743045466582971675}
+  - component: {fileID: 5881055665039028100}
   m_Layer: 0
   m_Name: BasicSpell
   m_TagString: Untagged
@@ -119,7 +119,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4743045466582971675
+--- !u!114 &5881055665039028100
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,14 +128,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 477752781277274071}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82f247860a1d27841997ed114d875c20, type: 3}
+  m_Script: {fileID: 11500000, guid: c558585997b1f084bbd29b463577902a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageValue: 10
-  FireType: 0
-  EarthType: 0
-  WaterType: 0
-  AirType: 0
-  existance: 100
-  moveSpeed: 8
-  Cooldown: 50
+  damageValue: 4.5
+  cooldown: 0.5
+  duration: 3
+  castDirection: {x: 0, y: 0, z: 0}
+  fireType: 0
+  earthType: 0
+  waterType: 0
+  airType: 0
+  moveSpeed: 10
