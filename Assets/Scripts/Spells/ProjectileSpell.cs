@@ -14,6 +14,7 @@ public class ProjectileSpell : Spell
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        spellEffect = new EffectObject(damageValue, waterType, earthType, fireType, airType);
     }
 
     public override void Constructor(Vector3 castDirection)
@@ -31,7 +32,9 @@ public class ProjectileSpell : Spell
 
     void OnTriggerEnter2D(Collider2D col)
     {
-
-        // col.GetComponent<EnemyBehavior>().IncomingEffect(spellEffect);
+        if (col.GetComponent<EnemyBehavior>() != null)
+        {
+            col.GetComponent<EnemyBehavior>().IncomingEffect(spellEffect);
+        }
     }
 }

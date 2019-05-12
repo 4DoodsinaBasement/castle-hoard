@@ -13,8 +13,8 @@ public class PlayerController : MonoBehaviour
     Player player;
     public float moveSpeed = 0.0f;
     Rigidbody2D rb;
-    Vector3 moveDirection = new Vector3(0, 0);
-    Vector3 lookDirection = new Vector3(0, 0);
+    Vector3 moveDirection = new Vector3(0, 0, 0);
+    Vector3 lookDirection = new Vector3(0, 1, 0);
     public GameObject spellToCast;
     float spellCooldownTargetTime = 0;
 
@@ -40,14 +40,14 @@ public class PlayerController : MonoBehaviour
 
     void PlayerLook()
     {
-        if (!player.GetButton("Strafe")) { lookDirection = moveDirection; }
+        if (!player.GetButton("Strafe") && !(moveDirection.x == 0 && moveDirection.y == 0)) { lookDirection = moveDirection; }
         transform.rotation = Quaternion.AngleAxis((Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg), Vector3.forward);
     }
 
     void CastSpell()
     {
         GameObject spellObject = Instantiate(spellToCast, transform.position, Quaternion.identity);
-        spellObject.GetComponent<Spell>().Constructor(lookDirection);
+        spellObject.GetComponent<Spell>().Constructor(lookDirection.normalized);
         spellCooldownTargetTime = Time.time + spellToCast.GetComponent<Spell>().cooldown;
     }
 

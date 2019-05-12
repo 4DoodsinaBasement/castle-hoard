@@ -21,7 +21,7 @@ public abstract class Spell : MonoBehaviour
 
     void Start()
     {
-        spellEffect = new EffectObject(damageValue, waterType, earthType, fireType, airType);
+        
     }
 
     public abstract void Constructor(Vector3 castDirection);
