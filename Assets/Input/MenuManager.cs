@@ -38,6 +38,19 @@ public class MenuManager : MonoBehaviour
     {
         foreach (MenuElement element in menuElements) { element.DebugLog(); }
     }
+
+
+    void Update()
+    {
+
+    }
+
+    public Vector3 NewCursorLocation(Vector3 currentCursorLocation, Vector3 inputDirection)
+    {
+        // TODO: find destination location using the current cursor position and the input direction
+        // return a vector, not a game object
+        return Vector3.zero;
+    }
 }
 
 public class MenuElement
@@ -64,8 +77,7 @@ public class MenuElement
         
         Debug.Log
         (
-            "ID: " + ID + ", Name: " + obj.name + "\n" + 
-            "Distances Count: " + distancesToOtherElements.Count + ", Directions Count: " + directionsToOtherElements.Count + "\n\n" + debugInfo
+            "ID: " + ID + ", Name: " + obj.name + "\n\n" + debugInfo
         );
     }
 }
